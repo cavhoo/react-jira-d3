@@ -1,7 +1,4 @@
-import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
-
-const tsc = require('typescript');
 
 export default {
   input: 'index.ts',
@@ -18,10 +15,5 @@ export default {
   external: [
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
-  ],
-  plugins: [
-    typescript({
-      typescript: tsc,
-    }),
   ],
 };
